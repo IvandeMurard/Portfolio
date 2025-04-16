@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 214 15% 19%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 214 15% 19%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 15% 19%;
+    
+    --primary: 214 15% 19%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 204 79% 47%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 171 100% 35%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 204 79% 47%;
+    
+    --radius: 0.5rem;
+    
+    /* Chart colors */
+    --chart-1: 204 79% 47%;
+    --chart-2: 171 100% 35%;
+    --chart-3: 214 15% 19%;
+    --chart-4: 205 70% 57%;
+    --chart-5: 165 85% 45%;
+    
+    /* Sidebar colors (matching main theme) */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 214 15% 19%;
+    --sidebar-primary: 204 79% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 171 100% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 204 79% 47%;
+  }
+
+  .dark {
+    --background: 214 15% 19%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 15% 22%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 15% 22%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 210 40% 98%;
+    --primary-foreground: 214 15% 19%;
+    
+    --secondary: 204 79% 47%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --accent: 171 100% 35%;
+    --accent-foreground: 210 40% 98%;
+    
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 204 79% 47%;
+    
+    /* Chart colors (adjusted for dark mode) */
+    --chart-1: 204 79% 47%;
+    --chart-2: 171 100% 35%;
+    --chart-3: 210 40% 98%;
+    --chart-4: 205 80% 67%;
+    --chart-5: 165 95% 55%;
+    
+    /* Sidebar colors for dark mode */
+    --sidebar-background: 222 15% 22%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 204 79% 47%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 171 100% 35%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 19% 27%;
+    --sidebar-ring: 204 79% 47%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins;
+  }
+
+  .timeline-item {
+    @apply relative pl-8;
+  }
+
+  .timeline-item::before {
+    content: "";
+    @apply absolute left-0 top-[10px] h-[calc(100%+20px)] w-[2px] bg-secondary;
+  }
+
+  .timeline-item:last-child::before {
+    @apply h-0;
+  }
+
+  .timeline-dot {
+    @apply absolute left-[-6px] top-[10px] w-[14px] h-[14px] rounded-full bg-accent border-[3px] border-secondary;
+  }
+
+  .section-padding {
+    @apply py-24 px-6;
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      @apply py-16 px-4;
+    }
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
